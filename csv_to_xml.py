@@ -17,7 +17,7 @@ def divide_addess(ad1):
 if __name__ == '__main__':
   divide_addess(d_list)
 ob_list={}
-ob_list["Contact"]=d_list
-xml_string = dicttoxml.dicttoxml(ob_list, attr_type=False, root=False)
+ob_list["ContactXML"]=d_list
+xml_string = dicttoxml.dicttoxml(ob_list, attr_type=False, root=False,item_func=lambda x: "ContactXMLItem")
 dom = xml.dom.minidom.parseString(xml_string) # xml.dom.minidom.parse(file_name) ファイルをパースするとき
 print(dom.toprettyxml())
