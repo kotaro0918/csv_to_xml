@@ -15,5 +15,5 @@ def divide_addess(ad1):
     d_list[i]["birthDate"]=d_list[i].pop("生年月日").replace('/','-')
 if __name__ == '__main__':
   divide_addess(d_list)
-s = sys.stdin.read(dicttoxml.dicttoxml(d_list, attr_type=False, root=False))
-print(xml.dom.minidom.parseString(s).toprettyxml())
+s = dicttoxml.dicttoxml(d_list, attr_type=False, root=False)
+print(s.decode('utf-8'))
